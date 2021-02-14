@@ -1,18 +1,38 @@
 EndeavourOS 
-default font - System-ui Regular 10
-desktop font - RobotoMono Nerd Font Light 10
-document font - Cantarell Regular 11
-monospace font - Source Code Pro Regular 10 
-window title font - Cantarell Regular 10
+Default font - System-ui Regular 10
+Desktop font - RobotoMono Nerd Font Light 10
+Document font - Cantarell Regular 11
+Monospace font - Source Code Pro Regular 10 
+Window title font - Cantarell Regular 10
 
 lightDM GTK+ 
 Font: Cantarell Light 10
 Theme: Arc
 Icon: paper
 
-screensaver/timefont - Noto Sans Thin 64
-screensaver/datefont - Noto Sans Thin 24
-screensaver/awaymessagefont - System-ui Regular 15
+screensaver/Timefont - Noto Sans Thin 64
+screensaver/Datefont - Noto Sans Thin 24
+screensaver/Awaymessagefont - System-ui Regular 15
 Msg: Peça permissão para o Diegão, a senha se resume a sequência de Fibonacci
 
-Tilda - dejavu sans mono book, bitstream mono roman 
+Tilda Font - Dejavu Sans Mono Book, bitstream mono roman 
+
+Manjaro
+
+Default font - dejaVu Sans Condensed 10
+Desktop font - Cantarell Light 10
+Document font - Fira Sans Extralight 11
+Monospace font - Droid Sans Mono Regular 10 
+Window title font - DejaVu Sans Extralight 10
+
+Login Window
+Gtk Theme: Mint-Y-Blue
+Icon Theme: epapirus
+Mouse cursor - Breeze Snow
+
+screensaver/Timefont - Noto Sans Extralight 64
+screensaver/Datefont - Comfortaa 24
+screensaver/Awaymessagefont - Comfortaa 15
+Msg: Peça permissão para o Diegão, a senha se resume a sequência de Fibonacci
+
+Tilda Font- Dejavu Sans Mono Book, bitstream mono roman 
