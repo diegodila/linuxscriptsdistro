@@ -1,13 +1,18 @@
-default font - System-ui Regular 
-desktop font - RobotoMono Nerd Font Light
-document font - Cantarell Regular
-monospace font - Source Code Pro Regular 
-window title font - Cantarell Regular
+EndeavourOS 
+default font - System-ui Regular 10
+desktop font - RobotoMono Nerd Font Light 10
+document font - Cantarell Regular 11
+monospace font - Source Code Pro Regular 10 
+window title font - Cantarell Regular 10
 
-lightDM GTK+ - Cantarell Light
+lightDM GTK+ 
+Font: Cantarell Light 10
+Theme: Arc
+Icon: paper
 
-screensaver/timefont - Noto Sans Thin
-screensaver/datefont - Noto Sans Thin
-screensaver/awaymessagefont - System-ui Regular
+screensaver/timefont - Noto Sans Thin 64
+screensaver/datefont - Noto Sans Thin 24
+screensaver/awaymessagefont - System-ui Regular 15
+Msg: Peça permissão para o Diegão, a senha se resume a sequência de Fibonacci
 
-tilda - dejavu sans mono book, bitstream mono roman 
+Tilda - dejavu sans mono book, bitstream mono roman 
