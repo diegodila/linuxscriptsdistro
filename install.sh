@@ -1,6 +1,7 @@
 echo "Installation Config Linux"
 
 chmod 555 $HOME/Downloads/install.sh
+chmod 555 $HOME/Projects/config/install.sh
 echo "Configuring Git, global username and email and credetial"
 git config --global user.name "Diego Ferreira Gonçalves"
 git config --global user.email "ferreira.dfg@gmail.com"
@@ -71,9 +72,20 @@ echo "Installation Intellij Idea"
 tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
 /opt/idea-IC-*/bin/idea.sh
 
-echo "Installation Eclipse vscode"
+echo "Installing Eclipse"
 sudo tar -zxvf $HOME/Downloads/eclipse-*.tar.gz -C /opt
+echo "Create symbolic link eclipse"
 sudo ln -s /opt/eclipse/eclipse /usr/bin/eclipse
+echo "[Desktop Entry]
+Encoding=UTF-8
+Name=Eclipse IDE
+Comment=Eclipse IDE
+Exec=/usr/bin/eclipse
+Icon=/opt/eclipse/icon.xpm
+Categories=Application;Development;Java;IDE
+Version=4.8
+Type=Application
+Terminal=0" >> sudo /usr/share/applications/eclipse.desktop
 
 sudo pacman -Syu
 yay 
