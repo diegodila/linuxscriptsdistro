@@ -75,17 +75,17 @@ tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
 echo "Installing Eclipse"
 sudo tar -zxvf $HOME/Downloads/eclipse-*.tar.gz -C /opt
 echo "Create symbolic link eclipse"
-sudo ln -s /opt/eclipse/eclipse /usr/bin/eclipse
+sudo ln -s $HOME/eclipse/*/eclipse/eclipse /usr/bin/eclipse
 echo "[Desktop Entry]
 Encoding=UTF-8
 Name=Eclipse IDE
 Comment=Eclipse IDE
 Exec=/usr/bin/eclipse
-Icon=/opt/eclipse/icon.xpm
+Icon=$HOME/eclipse/*/eclipse/eclipse/icon.xpm
 Categories=Application;Development;Java;IDE
 Version=4.8
 Type=Application
-Terminal=0" >> sudo /usr/share/applications/eclipse.desktop
+Terminal=0" | sudo tee -a /usr/share/applications/eclipse.desktop # add -a for append (>>)
 
 sudo pacman -Syu
 yay 
