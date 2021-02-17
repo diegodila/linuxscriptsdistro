@@ -1,5 +1,6 @@
 echo "Installation Config Linux"
 
+chmod 555 $HOME/Downloads/install.sh
 echo "Configuring Git, global username and email and credetial"
 git config --global user.name "Diego Ferreira Gonçalves"
 git config --global user.email "ferreira.dfg@gmail.com"
@@ -64,4 +65,29 @@ cat $HOME/Projects/config/vscode/extensions.txt | xargs -L 1 code --install-exte
 sudo pacman -Syu 
 yay
 yay -S zsh alacritty tilda brave plank microsoft-edge-dev-bin visual-studio-code-bin insync discord teams
-yay -S ttf-meslo-nerd-font-powerlevel10k
+yay -S ttf-meslo-nerd-font-powerlevel10k obs-studio arc-gtk-theme
+
+echo "Installation Intellij Idea"
+tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
+/opt/idea-IC-*/bin/idea.sh
+
+echo "Installation Eclipse vscode"
+sudo tar -zxvf $HOME/Downloads/eclipse-*.tar.gz -C /opt
+sudo ln -s /opt/eclipse/eclipse /usr/bin/eclipse
+
+sudo pacman -Syu
+yay 
+echo "Installing Docker"
+yay -S docker
+echo "Systemctl start Docker"
+sudo systemctl start docker
+sudo systemctl start docker.service
+echo "Systemctl enable Docker"
+sudo systemctl enable docker
+sudo systemctl enable docker.service
+echo "Docker version"
+sudo docker version
+echo "Docker info"
+sudo docker info
+echo "Docker usermod add"
+sudo usermod -aG docker $USER
