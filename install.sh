@@ -103,3 +103,10 @@ echo "Docker info"
 sudo docker info
 echo "Docker usermod add"
 sudo usermod -aG docker $USER
+
+echo "Removing manjaro beep"
+sudo rmmod pcspkr
+echo "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
+xset -b
+sudo echo 'xset -b' >> ~/.xprofile
+gsettings set org.cinnamon.desktop.wm.preferences audible-bell false
