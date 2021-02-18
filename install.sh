@@ -66,7 +66,10 @@ cat $HOME/Projects/config/vscode/extensions.txt | xargs -L 1 code --install-exte
 sudo pacman -Syu 
 yay
 yay -S zsh alacritty tilda brave plank microsoft-edge-dev-bin visual-studio-code-bin insync discord teams
-yay -S ttf-meslo-nerd-font-powerlevel10k obs-studio arc-gtk-theme
+yay -S ttf-meslo-nerd-font-powerlevel10k obs-studio arc-gtk-theme grub-customizer
+
+echo "Installation Oh My Zsh"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Installation Intellij Idea"
 tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
