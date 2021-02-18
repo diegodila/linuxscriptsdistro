@@ -56,27 +56,29 @@ cp -r /usr/share/themes/Mint-Y-Aqua $HOME/.themes/
 rm $HOME/.themes/Mint-Y-Aqua/cinnamon/cinnamon.css
 cp $HOME/Projects/config/cinnamon/cinnamon.css $HOME/.themes/Mint-Y-Aqua/cinnamon/
 
-echo "Configuring Pacman, include colors log"
-rm /etc/pacman.conf
-sudo cp $HOME/Projects/config/pacman-manjaro/pacman.conf /etc/
+sudo pacman -Syu 
+yay
+yay -S zsh alacritty tilda brave plank visual-studio-code-bin insync discord teams
+yay -S ttf-meslo-nerd-font-powerlevel10k obs-studio arc-gtk-theme grub-customizer
 
 echo "Installation extensions vscode"
 cat $HOME/Projects/config/vscode/extensions.txt | xargs -L 1 code --install-extension
 
-sudo pacman -Syu 
-yay
-yay -S zsh alacritty tilda brave plank microsoft-edge-dev-bin visual-studio-code-bin insync discord teams
-yay -S ttf-meslo-nerd-font-powerlevel10k obs-studio arc-gtk-theme grub-customizer
-
 echo "Installation Oh My Zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+echo "Configuring Alacritty terminal, theme and keybindings"
+mkdir $HOME/.config/alacritty
+cp $HOME/Projects/config/alacritty/alacritty.yml $HOME/.config/alacritty/
+echo "Finish"
+
 echo "Installation Intellij Idea"
-tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
+sudo tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
 /opt/idea-IC-*/bin/idea.sh
 
 echo "Installing Eclipse"
 sudo tar -zxvf $HOME/Downloads/eclipse-*.tar.gz -C /opt
+/opt/eclipse-installer/eclipse-inst
 echo "Create symbolic link eclipse"
 sudo ln -s $HOME/eclipse/*/eclipse/eclipse /usr/bin/eclipse
 echo "[Desktop Entry]
