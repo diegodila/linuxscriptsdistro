@@ -1,5 +1,15 @@
 echo "Installation Config Linux"
 
+sudo pacman -Sy 
+sudo pacman -Syu
+sudo pacman -S base-devel
+sudo pacman -S git
+#sudo git clone https://aur.archlinux.org/yay.git /opt/
+#sudo chown -R diegodila:users ./opt/yay
+#sudo chown -R diegodila:users ./opt/yay
+#cd /opt/yay/
+#makepkg -si
+
 chmod 555 $HOME/Downloads/install.sh
 chmod 555 $HOME/Projects/config/install.sh
 echo "Configuring Git, global username and email and credetial"
@@ -56,16 +66,23 @@ cp -r /usr/share/themes/Mint-Y-Aqua $HOME/.themes/
 rm $HOME/.themes/Mint-Y-Aqua/cinnamon/cinnamon.css
 cp $HOME/Projects/config/cinnamon/cinnamon.css $HOME/.themes/Mint-Y-Aqua/cinnamon/
 
+echo "Applications Installating"
 sudo pacman -Syu 
 yay
-yay -S zsh alacritty tilda brave plank visual-studio-code-bin insync discord teams
-yay -S ttf-meslo-nerd-font-powerlevel10k obs-studio arc-gtk-theme grub-customizer
+yay -S papirus-icon-theme arc-gtk-theme ttf-meslo-nerd-font-powerlevel10k volantes-cursors
+yay -S zsh alacritty tilda plank visual-studio-code-bin insync discord teams
+yay -S microsoft-edge-dev-bin obs-studio grub-customizer
+yay -S xed pix
 
 echo "Installation extensions vscode"
 cat $HOME/Projects/config/vscode/extensions.txt | xargs -L 1 code --install-extension
 
 echo "Installation Oh My Zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo "Installation finish Oh My Zsh"
+echo "Installation Powerlevel10k"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+echo "Installation finish Powerlevel10k"
 
 echo "Configuring Alacritty terminal, theme and keybindings"
 mkdir $HOME/.config/alacritty
