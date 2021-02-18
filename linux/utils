@@ -16,3 +16,11 @@ sudo efibootmgr --create --disk /dev/sdb --part 4 --loader /EFI/Manjaro/grubx64.
 #Settings AMDGPU
 lspci -k | grep amdgpu
 
+sudo mount /dev/sd*** /mnt
+sudo mount /dev/sd** /mnt/boot/efi
+for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
+sudo chroot /mnt
+grub-install /dev/sd*
+update-grub  
+
+sd* = disk | sd** = efi partition | sd*** = system partition
