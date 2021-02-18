@@ -1,2 +1,14 @@
 #grub-update
 grub-mkconfig -o /boot/grub/grub.cfg
+
+#Recover boot
+# /dev/sdb
+HD onde está a partição /boot/efi.
+Ex: partição sda, sdb, sdc, etc…
+# –part 4
+Número da partição /boot/efi.
+Ex: partição sdb4.
+
+# –label “Nome Opcional”
+Ex:–label “Manjaro GRUB”
+sudo efibootmgr --create --disk /dev/sdb --part 4 --loader /EFI/Manjaro/grubx64.efi --label "Manjaro GRUB" --verbose
