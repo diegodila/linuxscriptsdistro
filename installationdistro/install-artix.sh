@@ -72,7 +72,7 @@ yay
 yay -S papirus-icon-theme arc-gtk-theme ttf-meslo-nerd-font-powerlevel10k volantes-cursors
 yay -S zsh alacritty tilda plank visual-studio-code-bin insync discord teams
 yay -S microsoft-edge-dev-bin obs-studio grub-customizer
-yay -S xed pix
+yay -S xed pix gitflow-avh android-studio oracle-sqldeveloper displaymanager-openrc
 
 echo "Installation extensions vscode"
 cat $HOME/Projects/config/vscode/extensions.txt | xargs -L 1 code --install-extension
