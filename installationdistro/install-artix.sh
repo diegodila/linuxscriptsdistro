@@ -103,8 +103,8 @@ echo "Show Git remotes"
 git remote -v
 
 echo "Configuring theme cinnamon top panel, transparency 40%"
-cp -r /usr/share/themes/Mint-Y-Aqua $HOME/.themes/
-rm $HOME/.themes/Mint-Y-Aqua/cinnamon/cinnamon.css
+cp -r /usr/share/themes/Arc $HOME/.themes/
+rm $HOME/.themes/Arc/cinnamon/cinnamon.css
 cp $HOME/Projects/config/cinnamon/cinnamon.css $HOME/.themes/Mint-Y-Aqua/cinnamon/
 
 echo "Applications Installating"
