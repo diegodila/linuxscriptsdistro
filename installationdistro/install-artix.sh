@@ -102,14 +102,6 @@ git remote set-url --add origin https://gitlab.com/diegodila/pythonclub.git
 echo "Show Git remotes"
 git remote -v
 
-mkdir $HOME/.config/alacritty
-cp $HOME/Projects/config/alacritty/alacritty.yml $HOME/.config/alacritty/
-
-echo "Configuring Alacritty terminal, theme and keybindings"
-mkdir $HOME/.config/alacritty
-cp $HOME/Projects/config/alacritty/alacritty.yml $HOME/.config/alacritty/
-echo "Finish"
-
 echo "Configuring theme cinnamon top panel, transparency 40%"
 cp -r /usr/share/themes/Mint-Y-Aqua $HOME/.themes/
 rm $HOME/.themes/Mint-Y-Aqua/cinnamon/cinnamon.css
@@ -138,9 +130,21 @@ mkdir $HOME/.config/alacritty
 cp $HOME/Projects/config/alacritty/alacritty.yml $HOME/.config/alacritty/
 echo "Finish"
 
+cd $HOME/Downloads
 echo "Installation Intellij Idea"
+wget https://download.jetbrains.com/idea/ideaIC-2020.3.3.tar.gz
 sudo tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
 /opt/idea-IC-*/bin/idea.sh
+
+echo "Installation DataGrip IDE"
+wget https://download.jetbrains.com/datagrip/datagrip-2020.3.2.tar.gz
+sudo tar xzf datagrip-*.tar.gz -C /opt/
+/opt/datagrip-*/bin/datagrip.sh
+
+echo "Installation Pycharm IDE"
+wget https://download.jetbrains.com/python/pycharm-community-2020.3.4.tar.gz
+sudo tar xzf pycharm-*.tar.gz -C /opt/
+/opt/pycharm-*/bin/pycharm.sh
 
 echo "Installing Eclipse"
 sudo tar -zxvf $HOME/Downloads/eclipse-*.tar.gz -C /opt
