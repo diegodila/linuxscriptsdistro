@@ -1,23 +1,15 @@
-#AUR
 android-studio
 brave-bin
 gitflow-avh
 insync
-jdk8
 microsoft-edge-dev-bin
-packettracer
 pix-git
-spotify
 teams
 tor-browser
 ttf-meslo-nerd-font-powerlevel10k
 visual-studio-code-bin
 volantes-cursors
-whitesur-gtk-theme-git
-yay
 
-
-#COMMUNITY
 alacritty
 arc-gtk-theme
 dbeaver
