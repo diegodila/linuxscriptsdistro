@@ -122,7 +122,7 @@ echo "Installation finish Powerlevel10k"
 echo "Configuring Alacritty terminal, theme and keybindings"
 mkdir $HOME/.config/alacritty
 cp $HOME/Projects/config/alacritty/alacritty.yml $HOME/.config/alacritty/
-echo "Finish"
+echo "----------------------------------FINISH----------------------------------"
 
 echo "Installation Intellij Idea"
 wget https://download.jetbrains.com/idea/ideaIC-2020.3.3.tar.gz
