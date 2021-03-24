@@ -102,7 +102,8 @@ git remote -v
 
 echo "Applications Installating"
 sudo pacman -Syu
-yay -S $(cat $HOME/Projects/config/installationdistro/packages.txt)
+yay -S $(cat $HOME/Projects/config/packages/community)
+yay -S $(cat $HOME/Projects/config/packages/AUR)
 
 echo "Installation extensions vscode"
 cat $HOME/Projects/config/vscode/extensions.txt | xargs -L 1 code --install-extension
@@ -182,4 +183,4 @@ xset -b
 sudo echo 'xset -b' >> ~/.xprofile
 gsettings set org.cinnamon.desktop.wm.preferences audible-bell false
 
-yay -R $(cat $HOME/Projects/config/installationdistro/remove.txt)
+yay -R $(cat $HOME/Projects/config/installationdistro/remove)
