@@ -168,4 +168,4 @@ xset -b
 sudo echo 'xset -b' >> ~/.xprofile
 gsettings set org.cinnamon.desktop.wm.preferences audible-bell false
 
-yay -R $(cat $HOME/Projects/config/installationdistro/remove)
+yay -R $(cat $HOME/Projects/config/packages/remove)
