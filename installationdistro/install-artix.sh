@@ -159,22 +159,7 @@ Version=4.8
 Type=Application
 Terminal=0" | sudo tee -a /usr/share/applications/eclipse.desktop # add -a for append (>>)
 
-sudo pacman -Syu
-yay 
-echo "Installing Docker"
-yay -S docker
-echo "Systemctl start Docker"
-sudo systemctl start docker
-sudo systemctl start docker.service
-echo "Systemctl enable Docker"
-sudo systemctl enable docker
-sudo systemctl enable docker.service
-echo "Docker version"
-sudo docker version
-echo "Docker info"
-sudo docker info
-echo "Docker usermod add"
-sudo usermod -aG docker $USER
+sudo sh $HOME/Projects/config/packages/docker.sh
 
 echo "Removing manjaro beep"
 sudo rmmod pcspkr
