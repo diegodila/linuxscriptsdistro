@@ -15,7 +15,7 @@ arc-gtk-theme
 dbeaver
 discord
 grub-customizer
-community/lightdm-gtk-greeter-settings
+lightdm-gtk-greeter-settings
 libreoffice-fresh
 obs-studio
 papirus-icon-theme
