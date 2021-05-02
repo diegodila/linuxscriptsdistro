@@ -1,4 +1,4 @@
-echo "Installation Config Linux"
+echo "Installation packages and repositorys Artix Linux"
 
 sudo pacman -Sy 
 sudo pacman -Syu
@@ -14,7 +14,8 @@ chmod 555 $HOME/Projects/config/install.sh
 echo "Configuring Git, global username and email and credetial"
 git config --global user.name "Diego Ferreira Gonçalves"
 git config --global user.email "ferreira.dfg@gmail.com"
-git config --global credential.helper 'cache --timeout=172800'
+git config --global credential.helper store
+# git config --global credential.helper 'cache --timeout=172800'
 
 mkdir $HOME/Projects
 cd $HOME/Projects
@@ -100,7 +101,7 @@ git remote set-url --add origin https://gitlab.com/diegodila/pythonclub.git
 echo "Show Git remotes"
 git remote -v
 
-echo "Applications Installating"
+echo "Installing Applications"
 sudo pacman -Syu
 yay -S $(cat $HOME/Projects/config/packages/community)
 yay -S $(cat $HOME/Projects/config/packages/AUR)
@@ -113,10 +114,10 @@ cp -r /usr/share/themes/Arc $HOME/.themes/
 rm $HOME/.themes/Arc/cinnamon/cinnamon.css
 cp $HOME/Projects/config/cinnamon/cinnamon.css $HOME/.themes/Arc/cinnamon/
 
-echo "Installation Oh My Zsh"
+echo "Installing Oh My Zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo "Installation finish Oh My Zsh"
-echo "Installation Powerlevel10k"
+echo "Installing finish Oh My Zsh"
+echo "Installing Powerlevel10k"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 echo "Installation finish Powerlevel10k"
 
@@ -125,20 +126,22 @@ mkdir $HOME/.config/alacritty
 cp $HOME/Projects/config/alacritty/alacritty.yml $HOME/.config/alacritty/
 echo "----------------------------------FINISH----------------------------------"
 
-echo "Installation Intellij Idea"
-wget https://download.jetbrains.com/idea/ideaIC-2020.3.3.tar.gz
-sudo tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
-sudo tar -xzf $HOME/Downloads/ideaIC*.tar.gz -C /opt
-/opt/idea-IC-*/bin/idea.sh
+echo "Installing Intellij Idea"
+yay -S community/intellij-idea-community-edition
+# wget https://download.jetbrains.com/idea/ideaIC-2020.3.3.tar.gz
+# sudo tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
+# sudo tar -xzf $HOME/Downloads/ideaIC*.tar.gz -C /opt
+# /opt/idea-IC-*/bin/idea.sh
 
-echo "Installation DataGrip IDE"
-wget https://download.jetbrains.com/datagrip/datagrip-2020.3.2.tar.gz
-sudo tar xzf datagrip-*.tar.gz -C /opt/
-sudo tar xzf $HOME/Downloads/datagrip-*.tar.gz -C /opt/
-/opt/datagrip-*/bin/datagrip.sh
-/opt/DataGrip-*/bin/datagrip.sh
+echo "Installing DataGrip IDE"
+yay -S datagrip
+# wget https://download.jetbrains.com/datagrip/datagrip-2020.3.2.tar.gz
+# sudo tar xzf datagrip-*.tar.gz -C /opt/
+# sudo tar xzf $HOME/Downloads/datagrip-*.tar.gz -C /opt/
+# /opt/datagrip-*/bin/datagrip.sh
+# /opt/DataGrip-*/bin/datagrip.sh
 
-echo "Installation Pycharm IDE"
+echo "Installing Pycharm IDE"
 wget https://download.jetbrains.com/python/pycharm-community-2020.3.4.tar.gz
 sudo tar xzf pycharm-*.tar.gz -C /opt/
 /opt/pycharm-*/bin/pycharm.sh
@@ -147,7 +150,7 @@ echo "Installing Eclipse"
 wget -c http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/2021-03/R/eclipse-java-2021-03-R-linux-gtk-x86_64.tar.gz -O eclipse.tar.gz
 sudo tar -zxvf $HOME/Downloads/eclipse*.tar.gz -C /opt
 echo "Create symbolic link eclipse"
-sudo ln -s opt/eclipse/eclipse /usr/bin/eclipse
+sudo ln -s /opt/eclipse/eclipse /usr/bin/eclipse
 echo "[Desktop Entry]
 Encoding=UTF-8
 Name=Eclipse IDE

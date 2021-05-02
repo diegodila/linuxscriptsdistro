@@ -8,6 +8,9 @@ libreoffice-fresh
 obs-studio
 papirus-icon-theme
 plank
+python-pip
 tilda
+ttf-jetbrains-mono
+wget
 xed
 zsh
