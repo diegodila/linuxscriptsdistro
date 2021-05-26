@@ -20,7 +20,9 @@ git config --global credential.helper store
 mkdir $HOME/Projects
 
 sudo sh $HOME/Projects/config/repository/clones.sh
-sudo sh $HOME/Projects/config/repository/confrepos.sh
+# sudo sh $HOME/Projects/config/repository/confrepos.sh
+sh $HOME/Projects/config/repository/confrepos.sh
+
 
 echo "Installing Applications"
 sudo pacman -Syu
@@ -38,6 +40,7 @@ cp $HOME/Projects/config/cinnamon/cinnamon.css $HOME/.themes/Arc/cinnamon/
 echo "Installing Oh My Zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "Installing finish Oh My Zsh"
+ 
 echo "Installing Powerlevel10k"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 echo "Installation finish Powerlevel10k"
@@ -48,7 +51,7 @@ cp $HOME/Projects/config/alacritty/alacritty.yml $HOME/.config/alacritty/
 echo "----------------------------------FINISH----------------------------------"
 
 echo "Installing Intellij Idea"
-yay -S community/intellij-idea-community-edition
+yay -S aur/intellij-idea-ultimate-edition
 # wget https://download.jetbrains.com/idea/ideaIC-2020.3.3.tar.gz
 # sudo tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
 # sudo tar -xzf $HOME/Downloads/ideaIC*.tar.gz -C /opt
@@ -63,9 +66,10 @@ yay -S datagrip
 # /opt/DataGrip-*/bin/datagrip.sh
 
 echo "Installing Pycharm IDE"
-wget https://download.jetbrains.com/python/pycharm-community-2020.3.4.tar.gz
-sudo tar xzf pycharm-*.tar.gz -C /opt/
-/opt/pycharm-*/bin/pycharm.sh
+yay -S aur/pycharm-professional
+# wget https://download.jetbrains.com/python/pycharm-community-2020.3.4.tar.gz
+# sudo tar xzf pycharm-*.tar.gz -C /opt/
+# /opt/pycharm-*/bin/pycharm.sh
 
 echo "Installing Eclipse"
 wget -c http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/2021-03/R/eclipse-java-2021-03-R-linux-gtk-x86_64.tar.gz -O eclipse.tar.gz
