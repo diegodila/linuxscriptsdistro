@@ -16,14 +16,11 @@ echo
 
 chmod 555 $HOME/Downloads/install.sh
 chmod 555 $HOME/Projects/config/install.sh
-echo "Configuring Git, global username and email and credetial"
-git config --global user.name "Diego Ferreira Gonçalves"
-git config --global user.email "ferreira.dfg@gmail.com"
-git config --global credential.helper store
-# git config --global credential.helper 'cache --timeout=172800'
 
 echo "Creating folder Projects"
 mkdir $HOME/Projects
+cd $HOME/Projects
+git clone https://github.com/diegodila/config.git
 
 sudo sh $HOME/Projects/config/repository/clones.sh
 # sudo sh $HOME/Projects/config/repository/confrepos.sh
