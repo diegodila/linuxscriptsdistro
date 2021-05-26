@@ -2,7 +2,12 @@ echo "Installation packages and repositorys Artix Linux"
 
 sudo pacman -Sy 
 sudo pacman -Syu
-sudo pacman -S base-devel wget
+pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+echo
+# sudo pacman -S base-devel wget git
 #sudo git clone https://aur.archlinux.org/yay.git /opt/
 #sudo chown -R diegodila:users ./opt/yay
 #sudo chown -R diegodila:users ./opt/yay
@@ -17,6 +22,7 @@ git config --global user.email "ferreira.dfg@gmail.com"
 git config --global credential.helper store
 # git config --global credential.helper 'cache --timeout=172800'
 
+echo "Creating folder Projects"
 mkdir $HOME/Projects
 
 sudo sh $HOME/Projects/config/repository/clones.sh
@@ -27,7 +33,9 @@ sh $HOME/Projects/config/repository/confrepos.sh
 echo "Installing Applications"
 sudo pacman -Syu
 yay -S $(cat $HOME/Projects/config/packages/community)
+echo
 yay -S $(cat $HOME/Projects/config/packages/AUR)
+echo
 
 echo "Installation extensions vscode"
 cat $HOME/Projects/config/vscode/extensions.txt | xargs -L 1 code --install-extension
