@@ -102,3 +102,5 @@ sudo echo 'xset -b' >> ~/.xprofile
 gsettings set org.cinnamon.desktop.wm.preferences audible-bell false
 
 yay -R $(cat $HOME/Projects/config/packages/remove)
+echo "Setting network time"
+sudo ntpd -qg 
