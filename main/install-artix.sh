@@ -1,4 +1,4 @@
-echo "Installation packages and repositorys Artix Linux"
+echo "Installation packages and repositories Artix Linux"
 
 sudo pacman -Sy 
 sudo pacman -Syu
@@ -14,17 +14,17 @@ echo
 #cd /opt/yay/
 #makepkg -si
 
-chmod 555 $HOME/Downloads/install.sh
-chmod 555 $HOME/Projects/config/install.sh
+# chmod 555 $HOME/Downloads/install.sh
+# chmod 555 $HOME/Projects/config/install-artix.sh
 
 echo "Creating folder Projects"
 mkdir $HOME/Projects
 cd $HOME/Projects
 git clone https://github.com/diegodila/config.git
 
-sudo sh $HOME/Projects/config/repository/clones.sh
-# sudo sh $HOME/Projects/config/repository/confrepos.sh
-sh $HOME/Projects/config/repository/confrepos.sh
+sudo sh $HOME/Projects/config/repositories/clones.sh
+# sudo sh $HOME/Projects/config/repositories/confrepos.sh
+sh $HOME/Projects/config/repositories/confrepos.sh
 
 
 echo "Installing Applications"
