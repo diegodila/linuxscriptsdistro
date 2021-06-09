@@ -69,6 +69,17 @@ echo "******************************Show Git remotes****************************
 git remote -v
 echo
 
+cd $HOME/Projects/git
+echo "Configuring Repository to pull rebase true"
+git config pull.rebase true
+echo "Configuring Repository to add new url push"
+# git remote remove origin
+# git remote add origin https://github.com/diegodila/git.git
+git remote set-url --add origin https://gitlab.com/diegodila/git.git
+echo "******************************Show Git remotes******************************"
+git remote -v
+echo
+
 cd $HOME/Projects/governance
 echo "Configuring Repository to pull rebase true"
 git config pull.rebase true
@@ -98,6 +109,17 @@ echo "Configuring Repository to add new url push"
 # git remote remove origin
 # git remote add origin https://github.com/diegodila/javaclub.git
 git remote set-url --add origin https://gitlab.com/diegodila/javaclub.git
+echo "******************************Show Git remotes******************************"
+git remote -v
+echo
+
+cd $HOME/Projects/linux
+echo "Configuring Repository to pull rebase true"
+git config pull.rebase true
+echo "Configuring Repository to add new url push"
+# git remote remove origin
+# git remote add origin https://github.com/diegodila/linux.git
+git remote set-url --add origin https://gitlab.com/diegodila/linux.git
 echo "******************************Show Git remotes******************************"
 git remote -v
 echo
