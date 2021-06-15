@@ -3,7 +3,9 @@ echo "Installation packages and repositories Artix Linux"
 sudo pacman -Sy 
 sudo pacman -Syu
 pacman -S --needed git base-devel
+cd /opt
 git clone https://aur.archlinux.org/yay.git
+sudo chown -R /opt/yay
 cd yay
 makepkg -si
 echo
@@ -29,13 +31,13 @@ sudo sh $HOME/Projects/config/repositories/conf.sh
 
 echo "Installing Applications"
 sudo pacman -Syu
-yay -S $(cat $HOME/Projects/config/packages/community)
+yay -S --needed $(cat $HOME/Projects/config/packages/community)
 echo
-yay -S $(cat $HOME/Projects/config/packages/AUR)
+yay -S --needed $(cat $HOME/Projects/config/packages/AUR)
 echo
 
-echo "Installation extensions vscode"
-cat $HOME/Projects/config/vscode/extensions.txt | xargs -L 1 code --install-extension
+# echo "Installation extensions vscode"
+# cat $HOME/Projects/config/vscode/extensions.txt | xargs -L 1 code --install-extension
 
 echo "Configuring theme cinnamon top panel, transparency 40%"
 cp -r /usr/share/themes/Arc $HOME/.themes/
