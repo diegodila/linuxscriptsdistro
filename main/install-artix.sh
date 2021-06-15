@@ -24,7 +24,7 @@ git clone https://github.com/diegodila/config.git
 
 sudo sh $HOME/Projects/config/repositories/clones.sh
 # sudo sh $HOME/Projects/config/repositories/confrepos.sh
-sh $HOME/Projects/config/repositories/confrepos.sh
+sudo sh $HOME/Projects/config/repositories/conf.sh
 
 
 echo "Installing Applications"
@@ -76,21 +76,21 @@ yay -S aur/pycharm-professional
 # sudo tar xzf pycharm-*.tar.gz -C /opt/
 # /opt/pycharm-*/bin/pycharm.sh
 
-echo "Installing Eclipse"
-wget -c http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/2021-03/R/eclipse-java-2021-03-R-linux-gtk-x86_64.tar.gz -O eclipse.tar.gz
-sudo tar -zxvf $HOME/Downloads/eclipse*.tar.gz -C /opt
-echo "Create symbolic link eclipse"
-sudo ln -s /opt/eclipse/eclipse /usr/bin/eclipse
-echo "[Desktop Entry]
-Encoding=UTF-8
-Name=Eclipse IDE
-Comment=Eclipse IDE
-Exec=/usr/bin/eclipse
-Icon=/opt/eclipse/icon.xpm
-Categories=Application;Development;Java;IDE
-Version=4.8
-Type=Application
-Terminal=0" | sudo tee -a /usr/share/applications/eclipse.desktop # add -a for append (>>)
+# echo "Installing Eclipse"
+# wget -c http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/2021-03/R/eclipse-java-2021-03-R-linux-gtk-x86_64.tar.gz -O eclipse.tar.gz
+# sudo tar -zxvf $HOME/Downloads/eclipse*.tar.gz -C /opt
+# echo "Create symbolic link eclipse"
+# sudo ln -s /opt/eclipse/eclipse /usr/bin/eclipse
+# echo "[Desktop Entry]
+# Encoding=UTF-8
+# Name=Eclipse IDE
+# Comment=Eclipse IDE
+# Exec=/usr/bin/eclipse
+# Icon=/opt/eclipse/icon.xpm
+# Categories=Application;Development;Java;IDE
+# Version=4.8
+# Type=Application
+# Terminal=0" | sudo tee -a /usr/share/applications/eclipse.desktop # add -a for append (>>)
 
 sudo sh $HOME/Projects/config/packages/docker.sh
 
