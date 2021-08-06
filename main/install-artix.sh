@@ -2,6 +2,7 @@ echo "Installation packages and repositories Artix Linux"
 
 sudo pacman -Sy 
 sudo pacman -Syu
+sudo pacman -Syyu
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -30,9 +31,9 @@ sh $HOME/Projects/config/repositories/conf.sh
 
 echo "Installing Applications"
 sudo pacman -Syu
-yay -S $(cat $HOME/Projects/config/packages/community)
+yay -S --needed $(cat $HOME/Projects/config/packages/community)
 echo
-yay -S $(cat $HOME/Projects/config/packages/AUR)
+yay -S --needed $(cat $HOME/Projects/config/packages/AUR)
 echo
 
 echo "Installation extensions vscode"
@@ -107,3 +108,5 @@ echo "Setting network time"
 sudo ntpd -qg
 
 cp -r $HOME/Projects/config/theme/icons/. $HOME/.local/share/applications/
+
+sudo pacman -S archlinux-keyring
