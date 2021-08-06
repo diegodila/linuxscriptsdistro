@@ -2,7 +2,7 @@ echo "Installation packages and repositories Artix Linux"
 
 sudo pacman -Sy 
 sudo pacman -Syu
-pacman -S --needed git base-devel
+sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -22,9 +22,10 @@ mkdir $HOME/Projects
 cd $HOME/Projects
 git clone https://github.com/diegodila/config.git
 
-sudo sh $HOME/Projects/config/repositories/clones.sh
+sudo chown -R diegodila:users $HOME/Projects
+sh $HOME/Projects/config/repositories/clones.sh
 # sudo sh $HOME/Projects/config/repositories/confrepos.sh
-sudo sh $HOME/Projects/config/repositories/conf.sh
+sh $HOME/Projects/config/repositories/conf.sh
 
 
 echo "Installing Applications"
