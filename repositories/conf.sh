@@ -15,6 +15,7 @@ echo "******************************Show Git remotes****************************
 git remote -v
 echo
 
+cd $HOME/Projects/config
 echo "Configuring Repository to pull rebase true"
 git config pull.rebase true
 echo "Configuring Repository to add new url push"
