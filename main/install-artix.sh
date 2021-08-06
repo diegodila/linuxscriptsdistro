@@ -1,5 +1,5 @@
 echo "Installation packages and repositories Artix Linux"
-
+sudo pacman -S archlinux-keyring
 sudo pacman -Sy 
 sudo pacman -Syu
 sudo pacman -Syyu
@@ -109,4 +109,4 @@ sudo ntpd -qg
 
 cp -r $HOME/Projects/config/theme/icons/. $HOME/.local/share/applications/
 
-sudo pacman -S archlinux-keyring
+
