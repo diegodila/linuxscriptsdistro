@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=IntelliJ IDEA Ultimate Edition
+Comment=Intelligent Java IDE
+Exec=intellij-idea-ultimate-edition %u
+Icon=/opt/intellij-idea-ultimate-edition/bin/idea.svg
+Terminal=false
+StartupWMClass=jetbrains-idea
+Type=Application
+Categories=Development;IDE;

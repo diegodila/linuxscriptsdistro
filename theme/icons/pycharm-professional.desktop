@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=PyCharm Professional Edition
+Icon=/opt/pycharm-professional/bin/pycharm.svg
+Comment=Python IDE for Professional Developers.
+Exec=pycharm %f
+Terminal=false
+Categories=Development;IDE;Python;
+StartupNotify=true
+StartupWMClass=jetbrains-pycharm

@@ -35,7 +35,7 @@ yay -S $(cat $HOME/Projects/config/packages/AUR)
 echo
 
 echo "Installation extensions vscode"
-cat $HOME/Projects/config/vscode/extensions.txt | xargs -L 1 code --install-extension
+#cat $HOME/Projects/config/vscode/extensions.txt | xargs -L 1 code --install-extension
 
 echo "Configuring theme cinnamon top panel, transparency 40%"
 cp -r /usr/share/themes/Arc $HOME/.themes/
@@ -56,7 +56,7 @@ cp $HOME/Projects/config/alacritty/alacritty.yml $HOME/.config/alacritty/
 echo "----------------------------------FINISH----------------------------------"
 
 echo "Installing Intellij Idea"
-yay -S aur/intellij-idea-ultimate-edition
+yay -S aur/intellij-idea-ultimate-edition-jre
 # wget https://download.jetbrains.com/idea/ideaIC-2020.3.3.tar.gz
 # sudo tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
 # sudo tar -xzf $HOME/Downloads/ideaIC*.tar.gz -C /opt
@@ -94,7 +94,7 @@ yay -S aur/pycharm-professional
 
 sudo sh $HOME/Projects/config/packages/docker.sh
 
-echo "Removing manjaro beep"
+echo "Removing Artix beep"
 sudo rmmod pcspkr
 echo "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 xset -b
@@ -103,4 +103,6 @@ gsettings set org.cinnamon.desktop.wm.preferences audible-bell false
 
 yay -R $(cat $HOME/Projects/config/packages/remove)
 echo "Setting network time"
-sudo ntpd -qg 
+sudo ntpd -qg
+
+cp -r $HOME/Projects/config/theme/icons/. $HOME/.local/share/applications/
