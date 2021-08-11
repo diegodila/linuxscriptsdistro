@@ -109,4 +109,14 @@ sudo ntpd -qg
 
 cp -r $HOME/Projects/config/theme/icons/. $HOME/.local/share/applications/
 
+#config flutter 
+sudo gpasswd -a diegodila flutterusers
+newgrp flutterusers
+flutter doctor
+flutter doctor --android-licenses
 
+echo 
+
+#install node 12.18 
+nvm install 12.18
+echo
