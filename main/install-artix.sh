@@ -114,9 +114,10 @@ sudo gpasswd -a diegodila flutterusers
 newgrp flutterusers
 flutter doctor
 flutter doctor --android-licenses
-
 echo 
 
 #install node 12.18 
+source ~/.profile
+echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.zshrc
 nvm install 12.18
 echo
