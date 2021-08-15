@@ -58,6 +58,7 @@ cp $HOME/Projects/config/alacritty/alacritty.yml $HOME/.config/alacritty/
 echo "----------------------------------FINISH----------------------------------"
 
 echo "Installing Intellij Idea"
+yay -S aur/intellij-idea-ultimate-edition
 yay -S aur/intellij-idea-ultimate-edition-jre
 # wget https://download.jetbrains.com/idea/ideaIC-2020.3.3.tar.gz
 # sudo tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
@@ -110,7 +111,7 @@ sudo ntpd -qg
 cp -r $HOME/Projects/config/theme/icons/. $HOME/.local/share/applications/
 
 #config flutter 
-sudo gpasswd -a diegodila flutterusers
+sudo gpasswd -a $USER flutterusers
 newgrp flutterusers
 flutter doctor
 flutter doctor --android-licenses
