@@ -1,6 +1,6 @@
 yay 
 echo "****************Installing Docker****************"
-yay -S docker
+yay -S docker docker-openrc
 # yay -S docker-runit
 # sudo ln -s /etc/runit/sv/docker /run/runit/service
 echo "****************Sv runit start Docker****************"
