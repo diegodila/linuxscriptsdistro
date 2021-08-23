@@ -1,5 +1,6 @@
 cd $HOME/Projects
 echo "Cloning Github Repositorys, datastructure config javaclub pythonclub"
+git clone https://github.com/diegodila/android.git
 git clone https://github.com/diegodila/cloudplatform.git
 git clone https://github.com/diegodila/database.git
 git clone https://github.com/diegodila/datastructure.git
