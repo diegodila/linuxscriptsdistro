@@ -1,9 +1,9 @@
 echo "Installation packages and repositories Artix Linux"
-sudo pacman -S archlinux-keyring
+sudo pacman -S --needed --noconfirm archlinux-keyring
 sudo pacman -Sy 
 sudo pacman -Syu
 sudo pacman -Syyu
-sudo pacman -S --needed git base-devel
+sudo pacman -S --needed --noconfirm git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -31,9 +31,9 @@ sh $HOME/Projects/config/repositories/conf.sh
 
 echo "Installing Applications"
 sudo pacman -Syu
-yay -S --needed $(cat $HOME/Projects/config/packages/community)
+yay -S --needed --noconfirm $(cat $HOME/Projects/config/packages/community)
 echo
-yay -S --needed $(cat $HOME/Projects/config/packages/AUR)
+yay -S --needed --noconfirm $(cat $HOME/Projects/config/packages/AUR)
 echo
 
 echo "Installation extensions vscode"
@@ -74,7 +74,7 @@ yay -S datagrip
 # /opt/DataGrip-*/bin/datagrip.sh
 
 echo "Installing Pycharm IDE"
-yay -S aur/pycharm-professional
+yay -S --noconfirm aur/pycharm-professional
 # wget https://download.jetbrains.com/python/pycharm-community-2020.3.4.tar.gz
 # sudo tar xzf pycharm-*.tar.gz -C /opt/
 # /opt/pycharm-*/bin/pycharm.sh
@@ -95,13 +95,13 @@ yay -S aur/pycharm-professional
 # Type=Application
 # Terminal=0" | sudo tee -a /usr/share/applications/eclipse.desktop # add -a for append (>>)
 
-sudo sh $HOME/Projects/config/packages/docker.sh
+sh $HOME/Projects/config/packages/docker.sh
 
 echo "Removing Artix beep"
 sudo rmmod pcspkr
-echo "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
+#echo "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 xset -b
-sudo echo 'xset -b' >> ~/.xprofile
+#sudo echo 'xset -b' >> ~/.xprofile
 gsettings set org.cinnamon.desktop.wm.preferences audible-bell false
 
 yay -R $(cat $HOME/Projects/config/packages/remove)
