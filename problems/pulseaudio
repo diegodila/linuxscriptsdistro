@@ -1,0 +1,11 @@
+#restore pulse audio
+
+pulseaudio --kill
+pulseaudio --start
+lspci -knn|grep -iA2 audio
+pulseaudio -vv
+sudo fuser -v /dev/snd/*
+aplay -lL
+dmesg | grep snd
+pulseaudio -k
+pulseaudio -vvv
