@@ -99,7 +99,7 @@ sh $HOME/Projects/config/packages/docker.sh
 
 echo "Removing Artix beep"
 sudo rmmod pcspkr
-#echo "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
+echo "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 xset -b
 #sudo echo 'xset -b' >> ~/.xprofile
 gsettings set org.cinnamon.desktop.wm.preferences audible-bell false
