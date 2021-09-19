@@ -123,6 +123,4 @@ echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.zshrc
 nvm install 12.18
 echo
 
-
-
 sudo usermod -aG rfkill $USER
