@@ -1,4 +1,4 @@
-echo "Installation packages and repositories Artix Linux"
+﻿echo "Installation packages and repositories Artix Linux"
 sudo pacman -S --needed --noconfirm archlinux-keyring
 sudo pacman -Sy 
 sudo pacman -Syu
