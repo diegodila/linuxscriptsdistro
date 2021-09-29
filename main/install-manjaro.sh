@@ -95,3 +95,7 @@ sudo ntpd -qg
 cp -r $HOME/Projects/config/theme/icons/. $HOME/.local/share/applications/
 
 sudo usermod -aG rfkill $USER
+
+yay -S nautilus nautilus-admin nautilus-open-any-terminal dconf-editor
+gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
+gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
