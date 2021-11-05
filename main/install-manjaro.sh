@@ -99,3 +99,9 @@ sudo usermod -aG rfkill $USER
 yay -S nautilus nautilus-admin nautilus-open-any-terminal dconf-editor
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
 gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
+
+
+yay -S aur/touchpad-toggle-xinput
+xinput list
+xinput float 9
+xinput disable "VirtualBox mouse integration"
