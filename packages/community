@@ -1,9 +1,6 @@
 alacritty
-arc-gtk-theme
 dbeaver
 discord
-lightdm-gtk-greeter-settings
-libreoffice-fresh
 ncdu
 papirus-icon-theme
 plank
@@ -11,5 +8,4 @@ python-pip
 pyenv
 ttf-jetbrains-mono
 wget
-xed
 zsh
