@@ -18,7 +18,7 @@ echo
 echo "Creating folder Projects"
 mkdir $HOME/Projects
 cd $HOME/Projects
-#git clone https://github.com/diegodila/config.git
+git clone https://github.com/diegodila/config.git
 
 sudo chown -R diegodila:users $HOME/Projects
 sh $HOME/Projects/config/repositories/clones.sh
@@ -101,7 +101,7 @@ sudo usermod -aG rfkill $USER
 # gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 
 cat /proc/bus/input/devices
-yay -S aur/touchpad-toggle-xinput
+yay -S touchpad-toggle-xinput kde-servicemenus-rootactions
 xinput list
 xinput float 9
 xinput disable 9
