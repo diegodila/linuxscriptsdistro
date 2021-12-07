@@ -2,6 +2,7 @@ echo "Configuring Git, global username and email and credetial"
 git config --global user.name "Diego Ferreira Gonçalves"
 git config --global user.email "ferreira.dfg@gmail.com"
 git config --global credential.helper store
+git config --global init.defaultBranch main
 # git config --global credential.helper 'cache --timeout=172800'
 
 cd $HOME/Projects/android
