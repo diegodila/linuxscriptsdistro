@@ -1,6 +1,6 @@
 echo "Installation packages and repositories Artix Linux"
 sudo pacman -S --needed --noconfirm archlinux-keyring
-sudo pacman -Sy 
+sudo pacman -Sy
 sudo pacman -Syu
 sudo pacman -Syyu
 sudo pacman -S --needed --noconfirm git base-devel
@@ -40,7 +40,7 @@ echo
 echo "Installing Oh My Zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "Installing finish Oh My Zsh"
- 
+
 echo "Installing Powerlevel10k"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 echo "Installation finish Powerlevel10k"
@@ -100,12 +100,34 @@ sudo usermod -aG rfkill $USER
 # gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
 # gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 
-cat /proc/bus/input/devices
-yay -S touchpad-toggle-xinput kde-servicemenus-rootactions
-xinput list
-xinput float 9
-xinput disable 9
-xinput disable "VirtualBox mouse integration"
+# cat /proc/bus/input/devices
+# yay -S touchpad-toggle-xinput kde-servicemenus-rootactions
+# xinput list
+# xinput float 9
+# xinput disable 9
+# xinput disable "VirtualBox mouse integration"
 
 #export CHROME_EXECUTABLE=path/to/chrome
-#export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+# export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+
+yay -S aur/nvidia-utils-beta
+yay -S aur/nvidia-beta
+sudo nvidia-xconfig
+sudo modprobe -a nvidia
+nvidia-smi
+
+#amdgpu
+sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+
+#xorg configurations
+sudo nano /etc/X11/xorg.conf.d/20-amdgpu.conf
+Section "Device"
+     Identifier "AMD"
+     Driver "amdgpu"
+EndSection
+
+sudo modprobe -a amdgpu
+
+#update grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
