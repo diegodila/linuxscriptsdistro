@@ -131,3 +131,10 @@ sudo modprobe -a amdgpu
 #update grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
+#reset display and config
+xrandr --auto
+
+#update grub modules 
+sudo nano /etc/default/grub
+
+#o Os-prober é um pacote que serve para reconhecer outros sistemas instalado na máquinao Os-prober é um pacote que serve para reconhecer outros sistemas instalado na máquina
