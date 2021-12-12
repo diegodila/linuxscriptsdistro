@@ -119,6 +119,8 @@ nvidia-smi
 #amdgpu
 sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
 
+yay -S community/acpi_call-dkms
+
 #xorg configurations
 sudo nano /etc/X11/xorg.conf.d/20-amdgpu.conf
 Section "Device"
