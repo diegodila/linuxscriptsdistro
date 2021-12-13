@@ -104,17 +104,6 @@ echo "******************************Show Git remotes****************************
 git remote -v
 echo
 
-cd $HOME/Projects/kotlin
-echo "Configuring Repository to pull rebase true"
-git config pull.rebase true
-echo "Configuring Repository to add new url push"
-# git remote remove origin
-# git remote add origin https://github.com/diegodila/kotlin.git
-git remote set-url --add origin https://gitlab.com/diegodila/kotlin.git
-echo "******************************Show Git remotes******************************"
-git remote -v
-echo
-
 cd $HOME/Projects/javaclub
 echo "Configuring Repository to pull rebase true"
 git config pull.rebase true
@@ -133,6 +122,28 @@ echo "Configuring Repository to add new url push"
 # git remote remove origin
 # git remote add origin https://github.com/diegodila/linux.git
 git remote set-url --add origin https://gitlab.com/diegodila/linux.git
+echo "******************************Show Git remotes******************************"
+git remote -v
+echo
+
+cd $HOME/Projects/kotlin
+echo "Configuring Repository to pull rebase true"
+git config pull.rebase true
+echo "Configuring Repository to add new url push"
+# git remote remove origin
+# git remote add origin https://github.com/diegodila/kotlin.git
+git remote set-url --add origin https://gitlab.com/diegodila/kotlin.git
+echo "******************************Show Git remotes******************************"
+git remote -v
+echo
+
+cd $HOME/Projects/pyspark
+echo "Configuring Repository to pull rebase true"
+git config pull.rebase true
+echo "Configuring Repository to add new url push"
+# git remote remove origin
+# git remote add origin https://github.com/diegodila/pythonclub.git
+git remote set-url --add origin https://gitlab.com/diegodila/pyspark.git
 echo "******************************Show Git remotes******************************"
 git remote -v
 echo
