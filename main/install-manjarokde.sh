@@ -4,6 +4,9 @@ sudo pacman -Sy
 sudo pacman -Syu
 sudo pacman -Syyu
 sudo pacman -S --needed --noconfirm git base-devel
+pacman-mirrors --status
+#Update mirrorlist with the fastest mirrors
+sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
 echo
 # sudo pacman -S base-devel wget git
 #sudo git clone https://aur.archlinux.org/yay.git /opt/

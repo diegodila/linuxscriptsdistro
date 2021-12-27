@@ -4,6 +4,11 @@ sudo pacman -Sy
 sudo pacman -Syu
 sudo pacman -Syyu
 sudo pacman -S --needed --noconfirm git base-devel
+
+#Status mirrorlist
+pacman-mirrors --status
+#Update mirrorlist with the fastest mirrors
+sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
 echo
 # sudo pacman -S base-devel wget git
 #sudo git clone https://aur.archlinux.org/yay.git /opt/
@@ -96,15 +101,15 @@ cp -r $HOME/Projects/config/theme/icons/. $HOME/.local/share/applications/
 
 sudo usermod -aG rfkill $USER
 
-yay -S nautilus nautilus-admin nautilus-open-any-terminal dconf-editor
-gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
-gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
+# yay -S nautilus nautilus-admin nautilus-open-any-terminal dconf-editor
+# gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
+# gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 
-cat /proc/bus/input/devices
-yay -S aur/touchpad-toggle-xinput
-xinput list
-xinput float 9
-xinput disable "VirtualBox mouse integration"
+# cat /proc/bus/input/devices
+# yay -S aur/touchpad-toggle-xinput
+# xinput list
+# xinput float 9
+# xinput disable "VirtualBox mouse integration"
 
 #export CHROME_EXECUTABLE=path/to/chrome
-export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+# export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
