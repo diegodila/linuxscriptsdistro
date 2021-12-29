@@ -1,4 +1,4 @@
-# Installation script for Archlinux-based distros and linux packages 
+# Installation script for archlinux-based distros and linux packages 
 <div align="center">
   <a href="https://github.com/diegodila">
   <img height="180em" src="https://raw.githubusercontent.com/archlinux/svntogit-packages/5efa91285c851787ed4086116fa2da8dea254429/archlinux-menus/trunk/arch-logo.svg"/>
