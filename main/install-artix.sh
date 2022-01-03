@@ -16,33 +16,33 @@ echo
 #makepkg -si
 
 # chmod 555 $HOME/Downloads/install.sh
-# chmod 555 $HOME/Projects/config/install-artix.sh
+# chmod 555 $HOME/Projects/linuxscriptsdistro/install-artix.sh
 
 echo "Creating folder Projects"
 mkdir $HOME/Projects
 cd $HOME/Projects
-git clone https://github.com/diegodila/config.git
+git clone https://github.com/diegodila/linuxscriptsdistro.git
 
 sudo chown -R diegodila:users $HOME/Projects
-sh $HOME/Projects/config/repositories/clones.sh
-# sudo sh $HOME/Projects/config/repositories/confrepos.sh
-sh $HOME/Projects/config/repositories/conf.sh
+sh $HOME/Projects/linuxscriptsdistro/repositories/clones.sh
+# sudo sh $HOME/Projects/linuxscriptsdistro/repositories/confrepos.sh
+sh $HOME/Projects/linuxscriptsdistro/repositories/conf.sh
 
 
 echo "Installing Applications"
 sudo pacman -Syu
-yay -S --needed --noconfirm $(cat $HOME/Projects/config/packages/community)
+yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/community)
 echo
-yay -S --needed --noconfirm $(cat $HOME/Projects/config/packages/AUR)
+yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/AUR)
 echo
 
 echo "Installation extensions vscode"
-#cat $HOME/Projects/config/vscode/extensions.txt | xargs -L 1 code --install-extension
+#cat $HOME/Projects/linuxscriptsdistro/vscode/extensions.txt | xargs -L 1 code --install-extension
 
 echo "Configuring theme cinnamon top panel, transparency 40%"
 cp -r /usr/share/themes/Arc $HOME/.themes/
 rm $HOME/.themes/Arc/cinnamon/cinnamon.css
-cp $HOME/Projects/config/cinnamon/cinnamon.css $HOME/.themes/Arc/cinnamon/
+cp $HOME/Projects/linuxscriptsdistro/cinnamon/cinnamon.css $HOME/.themes/Arc/cinnamon/
 
 echo "Installing Oh My Zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -54,7 +54,7 @@ echo "Installation finish Powerlevel10k"
 
 echo "Configuring Alacritty terminal, theme and keybindings"
 mkdir $HOME/.config/alacritty
-cp $HOME/Projects/config/alacritty/alacritty.yml $HOME/.config/alacritty/
+cp $HOME/Projects/linuxscriptsdistro/alacritty/alacritty.yml $HOME/.config/alacritty/
 echo "----------------------------------FINISH----------------------------------"
 
 echo "Installing Intellij Idea"
@@ -95,7 +95,7 @@ yay -S --noconfirm aur/pycharm-professional
 # Type=Application
 # Terminal=0" | sudo tee -a /usr/share/applications/eclipse.desktop # add -a for append (>>)
 
-sh $HOME/Projects/config/packages/docker.sh
+sh $HOME/Projects/linuxscriptsdistro/packages/docker.sh
 
 echo "Removing Artix beep"
 sudo rmmod pcspkr
@@ -104,11 +104,11 @@ xset -b
 #sudo echo 'xset -b' >> ~/.xprofile
 gsettings set org.cinnamon.desktop.wm.preferences audible-bell false
 
-yay -R $(cat $HOME/Projects/config/packages/remove)
+yay -R $(cat $HOME/Projects/linuxscriptsdistro/packages/remove)
 echo "Setting network time"
 sudo ntpd -qg
 
-cp -r $HOME/Projects/config/theme/icons/. $HOME/.local/share/applications/
+cp -r $HOME/Projects/linuxscriptsdistro/theme/icons/. $HOME/.local/share/applications/
 
 #config flutter 
 sudo gpasswd -a $USER flutterusers
