@@ -92,6 +92,8 @@ yay -R $(cat $HOME/Projects/linuxscriptsdistro/packages/remove)
 echo "Setting network time"
 sudo ntpd -qg
 
+reflector --age 6 --latest 21 --fastest 21 --threads 21 --sort rate --protocol https --save /etc/pacman.d/mirrorlist
+
 cp -r $HOME/Projects/linuxscriptsdistro/theme/icons/. $HOME/.local/share/applications/
 
 sudo usermod -aG rfkill $USER
@@ -110,33 +112,33 @@ sudo usermod -aG rfkill $USER
 #export CHROME_EXECUTABLE=path/to/chrome
 # export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
-yay -S aur/nvidia-utils-beta
-yay -S aur/nvidia-beta
-sudo nvidia-xconfig
-sudo modprobe -a nvidia
-nvidia-smi
+# yay -S aur/nvidia-utils-beta
+# yay -S aur/nvidia-beta
+# sudo nvidia-xconfig
+# sudo modprobe -a nvidia
+# nvidia-smi
 
 #amdgpu
-sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+# sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
 
-yay -S community/acpi_call-dkms
+# yay -S community/acpi_call-dkms
 
 #xorg configurations
-sudo nano /etc/X11/xorg.conf.d/20-amdgpu.conf
-Section "Device"
-     Identifier "AMD"
-     Driver "amdgpu"
-EndSection
+# sudo nano /etc/X11/xorg.conf.d/20-amdgpu.conf
+# Section "Device"
+#      Identifier "AMD"
+#      Driver "amdgpu"
+# EndSection
 
-sudo modprobe -a amdgpu
+# sudo modprobe -a amdgpu
 
 #update grub
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+# sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 #reset display and config
-xrandr --auto
+# xrandr --auto
 
-#update grub modules 
-sudo nano /etc/default/grub
+#update grub modules
+# sudo nano /etc/default/grub
 
 #Os-prober é um pacote que serve para reconhecer outros sistemas instalado na máquina
