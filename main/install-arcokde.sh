@@ -28,9 +28,9 @@ sh $HOME/Projects/linuxscriptsdistro/repositories/conf.sh
 
 echo "Installing Applications"
 sudo pacman -Syu
-yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/community)
+yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/kde/community)
 echo
-yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/AUR)
+yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/kde/AUR)
 echo
 
 #echo "Installation extensions vscode"

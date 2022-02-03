@@ -3,7 +3,8 @@ sudo pacman -S --needed --noconfirm archlinux-keyring
 sudo pacman -Sy
 sudo pacman -Syu
 sudo pacman -Syyu
-sudo pacman -S --needed --noconfirm git base-devel
+sudo pacman -S --needed --noconfirm git base-devel paru
+sudo paru -S yay
 echo
 # sudo pacman -S base-devel wget git
 #sudo git clone https://aur.archlinux.org/yay.git /opt/
@@ -28,9 +29,9 @@ sh $HOME/Projects/linuxscriptsdistro/repositories/conf.sh
 
 echo "Installing Applications"
 sudo pacman -Syu
-yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/community)
+yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/kde/community)
 echo
-yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/AUR)
+yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/kde/AUR)
 echo
 
 #echo "Installation extensions vscode"
@@ -92,7 +93,7 @@ yay -R $(cat $HOME/Projects/linuxscriptsdistro/packages/remove)
 echo "Setting network time"
 sudo ntpd -qg
 
-reflector --age 6 --latest 21 --fastest 21 --threads 21 --sort rate --protocol https --save /etc/pacman.d/mirrorlist
+sudo reflector --age 6 --latest 21 --fastest 21 --threads 21 --sort rate --protocol https --save /etc/pacman.d/mirrorlist
 
 cp -r $HOME/Projects/linuxscriptsdistro/theme/icons/. $HOME/.local/share/applications/
 
