@@ -1,0 +1,3 @@
+yay -S wd719x-firmware upd72020x-fw aic94xx-firmware acpi_call
+
+sudo mkinitcpio -p linux
