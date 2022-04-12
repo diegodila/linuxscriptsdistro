@@ -148,3 +148,8 @@ sudo usermod -aG rfkill $USER
 # git pull all local rep
 # ls | xargs -I{} git -C {} pull
 
+#Restart it 
+sudo systemctl restart systemd-networkd.service
+#Get the status #
+systemctl status systemd-networkd.service
+
