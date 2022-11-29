@@ -3,15 +3,8 @@ sudo pacman -S --needed --noconfirm archlinux-keyring
 sudo pacman -Sy
 sudo pacman -Syu
 sudo pacman -Syyu
-sudo pacman -S --needed --noconfirm git base-devel paru
-sudo paru -S yay
+sudo pacman -S --needed --noconfirm git base-devel
 echo
-# sudo pacman -S base-devel wget git
-#sudo git clone https://aur.archlinux.org/yay.git /opt/
-#sudo chown -R diegodila:users ./opt/yay
-#sudo chown -R diegodila:users ./opt/yay
-#cd /opt/yay/
-#makepkg -si
 
 # chmod 555 $HOME/Downloads/install.sh
 # chmod 555 $HOME/Projects/linuxscriptsdistro/install-artix.sh
