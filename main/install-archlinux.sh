@@ -1,11 +1,13 @@
 echo "Installation packages and repositories Artix Linux"
-sudo pacman -S --needed --noconfirm archlinux-keyring
 sudo pacman -Sy
-sudo pacman -Syu
 sudo pacman -Syyu
+sudo pacman -S --needed --noconfirm archlinux-keyring
 sudo pacman -S --needed --noconfirm git base-devel
 echo
 
+echo "Installation YAY"
+sh $HOME/Projects/linuxscriptsdistro/packages/kde/YAY
+echo
 # chmod 555 $HOME/Downloads/install.sh
 # chmod 555 $HOME/Projects/linuxscriptsdistro/install-artix.sh
 
