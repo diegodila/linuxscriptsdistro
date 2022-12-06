@@ -1,0 +1,5 @@
+sudo pacman -S docker docker-compose
+sudo systemctl start docker.service
+sudo docker version
+sudo docker info
+sudo usermod -aG docker $USER
