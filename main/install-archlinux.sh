@@ -144,7 +144,7 @@ sudo usermod -aG rfkill $USER
 # ls | xargs -I{} git -C {} pull
 
 #Restart it 
-sudo systemctl restart systemd-networkd.service
+# sudo systemctl restart systemd-networkd.service
 #Get the status #
-systemctl status systemd-networkd.service
+# systemctl status systemd-networkd.service
 
