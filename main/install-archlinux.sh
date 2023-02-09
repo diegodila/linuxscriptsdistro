@@ -6,7 +6,7 @@ sudo pacman -S --needed --noconfirm git base-devel
 echo
 
 echo "Installation YAY"
-sh $HOME/Projects/linuxscriptsdistro/packages/kde/YAY
+sh $HOME/Projects/linuxscriptsdistro/packages/kde/YAY.sh
 echo
 # chmod 555 $HOME/Downloads/install.sh
 # chmod 555 $HOME/Projects/linuxscriptsdistro/install-artix.sh
