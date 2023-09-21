@@ -2,16 +2,18 @@ echo "Configuring Git, global username and email and credetial"
 git config --global user.name "Diego Ferreira Gonçalves"
 git config --global user.email "ferreira.dfg@gmail.com"
 git config --global credential.helper store
+git config pull.rebase true
 git config --global init.defaultBranch main
 # git config --global credential.helper 'cache --timeout=172800'
 
 cd $HOME/Projects/android
 echo "Configuring Repository to pull rebase true"
-git config pull.rebase true
-echo "Configuring Repository to add new url push"
+#git config pull.rebase true
+#echo "Configuring Repository to add new url push"
+git clone https://github.com/diegodila/android.git --config include.path=../.gitconfig
 # git remote remove origin
 # git remote add origin https://github.com/diegodila/cloudplatform.git
-git remote set-url --add origin https://gitlab.com/diegodila/android.git
+#git remote set-url --add origin https://gitlab.com/diegodila/android.git
 echo "******************************Show Git remotes******************************"
 git remote -v
 echo

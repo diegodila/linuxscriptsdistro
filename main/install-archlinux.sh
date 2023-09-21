@@ -56,8 +56,8 @@ yay -S aur/intellij-idea-ultimate-edition-jre
 # sudo tar -xzf $HOME/Downloads/ideaIC*.tar.gz -C /opt
 # /opt/idea-IC-*/bin/idea.sh
 
-echo "Installing DataGrip IDE"
-yay -S datagrip
+#echo "Installing DataGrip IDE"
+#yay -S datagrip
 # wget https://download.jetbrains.com/datagrip/datagrip-2020.3.2.tar.gz
 # sudo tar xzf datagrip-*.tar.gz -C /opt/
 # sudo tar xzf $HOME/Downloads/datagrip-*.tar.gz -C /opt/
