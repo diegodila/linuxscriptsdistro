@@ -5,9 +5,6 @@ sudo pacman -S --needed --noconfirm archlinux-keyring
 sudo pacman -S --needed --noconfirm git base-devel
 echo
 
-echo "Installation YAY"
-sh $HOME/Projects/linuxscriptsdistro/packages/kde/YAY.sh
-echo
 # chmod 555 $HOME/Downloads/install.sh
 # chmod 555 $HOME/Projects/linuxscriptsdistro/install-artix.sh
 
@@ -21,12 +18,21 @@ sh $HOME/Projects/linuxscriptsdistro/repositories/clones.sh
 # sudo sh $HOME/Projects/linuxscriptsdistro/repositories/confrepos.sh
 sh $HOME/Projects/linuxscriptsdistro/repositories/conf.sh
 
+echo "Installation YAY"
+sh $HOME/Projects/linuxscriptsdistro/packages/kde/YAY.sh
+echo
 
 echo "Installing Applications"
 sudo pacman -Syu
 yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/kde/community)
 echo
 yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/kde/AUR)
+echo
+echo
+yay -S --needed --noconfirm $(cat $HOME/Projects/linuxscriptsdistro/packages/kde/modules)
+echo
+echo
+sh $HOME/Projects/linuxscriptsdistro/packages/kde/docker_systemd
 echo
 
 #echo "Installation extensions vscode"

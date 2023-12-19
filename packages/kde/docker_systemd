@@ -1,4 +1,4 @@
-sudo pacman -S docker docker-compose ;
+yay pacman -S docker docker-compose ;
 sudo systemctl start docker.service ;
 sudo systemctl enable docker.service ;
 sudo docker version ;
