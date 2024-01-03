@@ -10,7 +10,8 @@ cd $HOME/Projects/android
 echo "Configuring Repository to pull rebase true"
 #git config pull.rebase true
 #echo "Configuring Repository to add new url push"
-git clone https://github.com/diegodila/android.git --config include.path=../.gitconfig
+#git clone https://github.com/diegodila/android.git --config include.path=../.gitconfig
+git config --local include.path ../.gitconfig
 # git remote remove origin
 # git remote add origin https://github.com/diegodila/cloudplatform.git
 #git remote set-url --add origin https://gitlab.com/diegodila/android.git
@@ -41,12 +42,13 @@ git remote -v
 echo
 
 cd $HOME/Projects/linuxscriptsdistro
-echo "Configuring Repository to pull rebase true"
-git config pull.rebase true
-echo "Configuring Repository to add new url push"
+git config --local include.path ../.gitconfig
+#echo "Configuring Repository to pull rebase true"
+#git config pull.rebase true
+#echo "Configuring Repository to add new url push"
 # git remote remove origin
 # git remote add origin https://github.com/diegodila/linuxscriptsdistro.git
-git remote set-url --add origin https://gitlab.com/diegodila/linuxscriptsdistro.git
+#git remote set-url --add origin https://gitlab.com/diegodila/linuxscriptsdistro.git
 echo "******************************Show Git remotes******************************"
 git remote -v
 echo 
@@ -184,23 +186,25 @@ git remote -v
 echo
 
 cd $HOME/Projects/pyspark
-echo "Configuring Repository to pull rebase true"
-git config pull.rebase true
-echo "Configuring Repository to add new url push"
+git config --local include.path ../.gitconfig
+#echo "Configuring Repository to pull rebase true"
+#git config pull.rebase true
+#echo "Configuring Repository to add new url push"
 # git remote remove origin
 # git remote add origin https://github.com/diegodila/pyspark.git
-git remote set-url --add origin https://gitlab.com/diegodila/pyspark.git
+#git remote set-url --add origin https://gitlab.com/diegodila/pyspark.git
 echo "******************************Show Git remotes******************************"
 git remote -v
 echo
 
 cd $HOME/Projects/pythonclub
-echo "Configuring Repository to pull rebase true"
-git config pull.rebase true
-echo "Configuring Repository to add new url push"
+git config --local include.path ../.gitconfig
+#echo "Configuring Repository to pull rebase true"
+#git config pull.rebase true
+#echo "Configuring Repository to add new url push"
 # git remote remove origin
 # git remote add origin https://github.com/diegodila/pythonclub.git
-git remote set-url --add origin https://gitlab.com/diegodila/pythonclub.git
+#git remote set-url --add origin https://gitlab.com/diegodila/pythonclub.git
 echo "******************************Show Git remotes******************************"
 git remote -v
 echo
