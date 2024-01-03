@@ -51,7 +51,7 @@ echo "Installation finish Powerlevel10k"
 
 echo "Configuring Alacritty terminal, theme and keybindings"
 mkdir $HOME/.config/alacritty
-cp $HOME/Projects/linuxscriptsdistro/alacritty/alacritty.yml $HOME/.config/alacritty/
+cp $HOME/Projects/linuxscriptsdistro/alacritty/alacritty.toml $HOME/.config/alacritty/
 echo "----------------------------------FINISH----------------------------------"
 
 echo "Installing Intellij Idea"
