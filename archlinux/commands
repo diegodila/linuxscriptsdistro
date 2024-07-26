@@ -1,0 +1,5 @@
+what means the -Rns ??
+R = remove
+n = pacman saves important configuration files when removing certain applications and names them with the extension: .pacsave. To prevent the creation of these backup files use the -n option
+s = To remove a package and its dependencies which are not required by any other installed package.
+
