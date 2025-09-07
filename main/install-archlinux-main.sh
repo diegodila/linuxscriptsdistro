@@ -52,11 +52,16 @@ echo "Installation finish Powerlevel10k"
 echo "Configuring Alacritty terminal, theme and keybindings"
 mkdir $HOME/.config/alacritty
 cp $HOME/Projects/linuxscriptsdistro/alacritty/alacritty.toml $HOME/.config/alacritty/
+cp $HOME/Projects/linuxscriptsdistro/alacritty/kitty.conf $HOME/.config/kitty/
+
 echo "----------------------------------FINISH----------------------------------"
 
-echo "Installing Intellij Idea"
-yay -S aur/intellij-idea-ultimate-edition
-yay -S aur/intellij-idea-ultimate-edition-jre
+sudo reflector --age 6 --latest 21 --fastest 21 --threads 21 --sort rate --protocol https --save /etc/pacman.d/mirrorlist
+
+#echo "Installing Intellij Idea"
+#yay -S aur/intellij-idea-ultimate-edition
+#yay -S aur/intellij-idea-ultimate-edition-jre
+
 # wget https://download.jetbrains.com/idea/ideaIC-2020.3.3.tar.gz
 # sudo tar -xzf ideaIC-2020.3.2.tar.gz -C /opt
 # sudo tar -xzf $HOME/Downloads/ideaIC*.tar.gz -C /opt
@@ -92,15 +97,14 @@ yay -S aur/intellij-idea-ultimate-edition-jre
 # Type=Application
 # Terminal=0" | sudo tee -a /usr/share/applications/eclipse.desktop # add -a for append (>>)
 
-yay -R $(cat $HOME/Projects/linuxscriptsdistro/packages/remove)
-echo "Setting network time"
-sudo ntpd -qg
+#yay -R $(cat $HOME/Projects/linuxscriptsdistro/packages/remove)
+#echo "Setting network time"
+#sudo ntpd -qg
 
-sudo reflector --age 6 --latest 21 --fastest 21 --threads 21 --sort rate --protocol https --save /etc/pacman.d/mirrorlist
 
-cp -r $HOME/Projects/linuxscriptsdistro/theme/icons/. $HOME/.local/share/applications/
+#cp -r $HOME/Projects/linuxscriptsdistro/theme/icons/. $HOME/.local/share/applications/
 
-sudo usermod -aG rfkill $USER
+#sudo usermod -aG rfkill $USER
 
 # yay -S nautilus nautilus-admin nautilus-open-any-terminal dconf-editor
 # gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
