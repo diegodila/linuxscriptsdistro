@@ -1,0 +1,2 @@
+ssh-keygen -t ed25519 -C "ferreira.dfg@gmail.com" -f ~/.ssh/id_ed25519 -N ""
+cat ~/.ssh/id_ed25519.pub
