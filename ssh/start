@@ -1,2 +1,24 @@
 ssh-keygen -t ed25519 -C "ferreira.dfg@gmail.com" -f ~/.ssh/id_ed25519 -N ""
 cat ~/.ssh/id_ed25519.pub
+
+ED25519 é o nome de um algoritmo criptográfico baseado em curvas elípticas.
+o nome vem de: EdDSA + Curve25519
+
+quais sao os tipos comuns de algoritmo chave?
+ssh-keygen -t rsa
+ssh-keygen -t ecdsa
+ssh-keygen -t ed25519
+
+RSA - Mais antigo e muito compatível
+ECDSA - Curvas elípticas
+ED25519 - Mais moderno e geralmente recomendado
+
+Por que ED25519?
+chaves menores, assinaturas menores, mais rapido, segurança forte, menos erros de implementacao
+
+-C significa comment de comentario onde esse texto é gravado dentro da chave publica.
+
+-f significa file, onde a chave será salva: ~/.ssh/id_ed25519
+
+-N significa new passphrase e quando a passphrase é vazia: N ""
+esta dizendo que não quer proteger sua chave privada com senha
